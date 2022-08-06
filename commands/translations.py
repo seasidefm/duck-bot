@@ -2,7 +2,8 @@ import os
 from requests import post
 from discord import Message
 
-API_HOST = os.environ.get('SEASIDE_API_HOST')
+API_HOST = os.environ.get("SEASIDE_API_HOST")
+
 
 async def get_translation(language, text):
     print("----------------------------------------------------")
@@ -11,6 +12,7 @@ async def get_translation(language, text):
     print("----------------------------------------------------")
     response = post(f"{API_HOST}/translate", json={"text": text, "target": language})
     return response.json()["data"]
+
 
 def translate_to_language(language_abbr):
     async def _get_translation(message: Message, arg_string):

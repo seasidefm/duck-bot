@@ -1,4 +1,4 @@
-HELP_STRING ="""
+HELP_STRING = """
 ```
 Available commands:
     ?help - Show this help message
@@ -16,6 +16,7 @@ Available commands:
 
 async def help_command(_, __):
     return HELP_STRING
+
 
 help_commands = {
     "?h": help_command,
