@@ -18,6 +18,12 @@ async def on_ready():
     print(client.user.id)
     print("------")
 
+    print("Setting bot presence")
+    await client.change_presence(game=discord.Game(name="?help"))
+
+    print("Setup done!")
+
+
 
 COMMANDS = get_commands()
 
