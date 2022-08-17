@@ -1,10 +1,10 @@
+from datetime import datetime
 import os
 
 import discord
 from discord import Message
 
 from commands import get_commands
-import commands
 
 TOKEN = os.environ.get("DISCORD_TOKEN")
 
@@ -19,7 +19,9 @@ async def on_ready():
     print("------")
 
     print("Setting bot presence")
-    await client.change_presence(game=discord.Game(name="?help"))
+
+    activity = discord.Game(name="?help")
+    await client.change_presence(status=discord.Status.online, activity=activity)
 
     print("Setup done!")
 
