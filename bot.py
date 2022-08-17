@@ -20,7 +20,7 @@ async def on_ready():
 
     print("Setting bot presence")
 
-    activity = discord.Game(name="?help")
+    activity = discord.Game(name="?h")
     await client.change_presence(status=discord.Status.online, activity=activity)
 
     print("Setup done!")
